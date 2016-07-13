@@ -61,7 +61,10 @@ BYTE printTerminal (BYTE* Ptr, boolean hasPrompt);
 
 #define println_message(M, ...) SystemLog_Println( SYSTEM_LOG_PRINT_MESSAGE, SYSTEM_LOG_BLUE_COLOR "[MSG] " SYSTEM_LOG_NO_COLOR "(%s) " M,__FILENAME__, ##__VA_ARGS__)
 #define print_message(M,...) SystemLog_Printf(FALSE, SYSTEM_LOG_PRINT_MESSAGE,  M, ##__VA_ARGS__)
-#define print_debug(M, ...) SystemLog_Println(SYSTEM_LOG_PRINT_DEBUG, SYSTEM_LOG_PURPLE_COLOR "[DEBUG] " SYSTEM_LOG_NO_COLOR "(%s:%d: function: %s) " M, __FILENAME__ ,__LINE__, __func__, ##__VA_ARGS__)
+
+#define println_debug(M, ...) SystemLog_Println(SYSTEM_LOG_PRINT_DEBUG, SYSTEM_LOG_PURPLE_COLOR "[DEBUG] " SYSTEM_LOG_NO_COLOR "(%s:%d: function: %s) " M, __FILENAME__ ,__LINE__, __func__, ##__VA_ARGS__)
+#define print_debug(M, ...) SystemLog_Printf(FALSE, SYSTEM_LOG_PRINT_DEBUG, SYSTEM_LOG_PURPLE_COLOR "[DEBUG] " SYSTEM_LOG_NO_COLOR "(%s:%d: function: %s) " M, __FILENAME__ ,__LINE__, __func__, ##__VA_ARGS__)
+
 #define print_log(M, ...) SystemLog_Println(SYSTEM_LOG_PRINT_LOG, SYSTEM_LOG_CYAN_COLOR "[LOG] " SYSTEM_LOG_NO_COLOR "(%s) " M, __FILENAME__, ##__VA_ARGS__)
 //#define print_log(M, ...)
 #define print_error(M, ...) SystemLog_Println(SYSTEM_LOG_PRINT_ERROR, SYSTEM_LOG_RED_COLOR "[ERROR] " "(%s:%d: function: %s) " M SYSTEM_LOG_NO_COLOR, __FILENAME__ ,__LINE__, __func__, ##__VA_ARGS__)

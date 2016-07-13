@@ -30,12 +30,15 @@ INT16 MMUHandler_FindHeapAddressItem(BYTE * address);
 void MMUHandler_SetHeapAddress(BYTE * address);
 void MMUHandler_RemoveHeapAddress(void);
 BYTE * MMUHandler_GetHeapAddress(void);
+void MMUHandler_PrintHeapAddress(void);
 
+INT16 MMUHandler_FindAddressItemIntoQueue(BYTE * address);
 void MMUHandler_SetQueueItemByIndex(BYTE * address, BYTE index);
 BYTE * MMUHandler_GetQueueItemByIndex(BYTE index);
 
 void MMUHandler_SetCounter(BYTE counter);
 BYTE MMUHandler_GetCounter(void);
+void MMUHandler_PrintFreeAddressQueue(void);
 
 void MMUHandler_Init(void);
 INT16 MMUHandler_Free(BYTE * address);

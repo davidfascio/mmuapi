@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     for (index = 0; index < 11; index++) {
         mem[index] = malloc(100);
         
-        MMUHandler_SetHeapAddress(mem[0]);
+        MMUHandler_SetHeapAddress(mem[index]);
     }
     
     MMUHandler_Free(mem[5]);
@@ -35,9 +35,11 @@ int main(int argc, char** argv) {
     MMUHandler_Free(mem[2]);
     MMUHandler_Free(mem[4]);
     MMUHandler_Free(mem[9]);
-    
+    MMUHandler_Free(mem[0]);
     while(TRUE){
         MMUHandler_Update();
+        Sleep(1000);
+        MMUHandler_Free(mem[9]);
     }
     return (EXIT_SUCCESS);
 }
