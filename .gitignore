@@ -1,0 +1,9 @@
+test.c
+test.h
+*.o
+*.o.d
+*.hex
+*.elf
+*.map
+*.exe
+dist
